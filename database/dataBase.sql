@@ -6,7 +6,8 @@
 		userID INT AUTO_INCREMENT primary key,
 		nome varchar(40),
 		email varchar(40),
-		senha varchar(40)
+		senha varchar(40),
+		telefone varchar(40)
 	);
 
 	create table Dispositivo(
@@ -25,16 +26,20 @@
 	FOREIGN KEY (idDispositivo) REFERENCES Dispositivo(idDispositivo)
 	);
 
-	INSERT INTO Usuario (userID, nome, email, senha) 
+	INSERT INTO Usuario (userID, nome, email, senha,telefone) 
 	VALUES 
-	(1, 'João', 'joão@gmail.com', 'senha123');
+	(1, 'João', 'joão@gmail.com', 'senha123','4022-8922');
 
-	INSERT INTO Dispositivo	 (nomeDispositivo, latitude, longitude) 
+	INSERT INTO Dispositivo	 (idDispositivo,nomeDispositivo, latitude, longitude) 
 	VALUES 
-	('Rex', 0, 0);
+	(1,'Rex', 0, 0);
 
 	update Dispositivo set latitude = -22.95278084088744 , longitude = -46.54846591250378 where idDispositivo = 1;
     update Dispositivo set latitude = 48.85286423416817 , longitude = 2.370712607481553 where idDispositivo = 1;
-	 update Dispositivo set latitude = 0 , longitude = 0 where idDispositivo = 1;
-
-	select * from HistoricoCoordenadas;
+	update Dispositivo set latitude = 0 , longitude = 0 where idDispositivo = 1;
+	COMMIT;
+    
+    
+	select * from Usuario;
+    select * from Dispositivo;
+    select * from HistoricoCoordenadas;
