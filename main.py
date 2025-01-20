@@ -106,6 +106,7 @@ def main():
                     id = input("DIGITE UM ID: ")
                     
                     for i in range(0, 10000, 1):
+                        database_controller.atualizarConexao()
                         print(database_controller.localizacao(id))
                         time.sleep(0.5)
 
