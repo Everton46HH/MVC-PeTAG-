@@ -17,6 +17,9 @@ class databaseController:
      def localizacao(self,id):
           return self.dao.localizacao(id)
      
+     def adicionarRegistro(self,id,registro):
+          return self.dao.adicionarRegistro(id,registro)
+     
      def atualizarConexao(self):
           # Isso é necessario pois ele cria uma nova conexao ao banco de dados,permitindo a constante consulta das coordenadas
           self.banco = BancoDeDados()

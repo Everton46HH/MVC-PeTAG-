@@ -42,3 +42,9 @@ class databaseDAO:
             
         except:
             return None
+        
+    def adicionarRegistro(self,id,registro):
+        cursor = self.conexao.cursor()
+        cursor.execute(f"INSERT INTO HistoricoCoordenadas(idDispositivo,latitude,longitude) VALUES({registro[0]}, {registro[2]}, {registro[3]})")
+        cursor.close()
+        self.conexao.commit()

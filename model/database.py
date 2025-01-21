@@ -1,5 +1,4 @@
 import mysql.connector
-import time
 
 class BancoDeDados:
     def __init__(self):

@@ -4,22 +4,23 @@ import time
 #VCP final
 from controller.databaseController import databaseController
 from controller.userController import userController
+from view.view import menu
+from view.view import menu2
+from view.view import menu3
+
 
 #"VCP" temporario (testes)
 from model.database import BancoDeDados
 from model.dispositivo import Dispositivo
 from model.user import User
-from view.view import menu
-from view.view import menu2
-from view.view import menu3
 from view.view import configuracaoConta
 
 from dao.userDAO import userDAO
 
 
 
-a = userDAO(True)
-db = BancoDeDados()
+# teste = userDAO(True)
+# db = BancoDeDados()
 
 
 
@@ -107,7 +108,13 @@ def main():
                     
                     for i in range(0, 10000, 1):
                         database_controller.atualizarConexao()
+
                         print(database_controller.localizacao(id))
+
+                        # Adicionar registroHistorico
+
+                        database_controller.adicionarRegistro(id,database_controller.localizacao(id))
+                        
                         time.sleep(0.5)
 
                     # resultado = db.cursor.fetchone()
