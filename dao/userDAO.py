@@ -12,7 +12,7 @@ class userDAO:
 
         cursor = self.conexao.cursor()
         
-        cursor.execute(f"UPDATE Usuario set senha={novoEmail} where userID = {user.userId}")
+        cursor.execute(f"UPDATE Usuario set email={novoEmail} where userID = {user.userId}")
         self.conexao.commit()
 
     def addUser(self, user):
