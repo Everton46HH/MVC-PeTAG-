@@ -1,4 +1,4 @@
-Projeto Escolar feito por
+Projeto Escolar feito por:
 
 
 Everton Oliveira
